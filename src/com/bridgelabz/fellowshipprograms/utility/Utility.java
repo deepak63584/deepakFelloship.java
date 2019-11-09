@@ -825,7 +825,7 @@ public class Utility
 		return conver;
 	}
     
-    
+    //days of week-
     public static int dayOfWeek(int d, int m, int y) {
 		int y0 = y - (14 - m) / 12;
 		int x = y0 + y0 / 4 - y0 / 100 + y0 / 400;
@@ -834,15 +834,37 @@ public class Utility
 		return d0;
 	}
     
-    
+    //Monthly payment-
     public static double monthlyPayment(double p, double y, double r) {
 		double n = 12 * y;
 		double r0 = r / (12 * 100);
 		double payment = p * r0 / (1 - Math.pow((1 + r0), -n));
 		return payment;
 	}
+    
+    
+    //Vending Machine-
+    public static int[] returnnotes(int value)
+    {
+    	int I = 0, TOTAL = 0;
+    	int notes[] = {1000,500,100,50,20,10,5,2,1};
+    	if (value / notes[I] != 0) {
+			TOTAL += (value / notes[I]);
+			System.out.println(notes[I] + "rs notes :" + value / notes[I]);
+			value = value % notes[I];
+		}
+		I++;
+		if (value == 0) {
+			System.out.println("total notes :" + TOTAL);
+		}
+		System.out.println(value);
+		return notes;
+		
 
- 
+	}
+
+	
+	
 	
 	
 	
